@@ -1,0 +1,39 @@
+//login
+<ul class="account__box-list">
+                            <li class="account__box-item account__box-item-input">
+                                <label class="account__box-title" for="username">Tên đăng nhập</label>
+                                <input class="account__box-input" id="username" type="text">
+                                <i class="account__box-icon fa-solid fa-user"></i>
+                                <span class="tip">từ 6 - 20 kí tự</span>
+                            </li>
+                            <li class="account__box-item account__box-item-input">
+                                <label class="account__box-title"  for="password">Mật khẩu</label>
+                                <input class="account__box-input" id="password" type="text">
+                                <i class="account__box-icon fa-solid fa-lock"></i>
+                                <span class="tip">từ 6 - 20 kí tự</span>
+                            </li>
+                            <li class="account__box-item">
+                                <div class="account__box-item-check">
+                                    <input class="account__box-icon-check" type="checkbox" name="" id="remember" hidden>
+                                    <div class="checked"></div>
+                                    <label class="account__box-title" for="remember">Ghi nhớ</label>
+                                </div>
+                                <a  class="account__box-title" href="">Quên mật khẩu</a>
+                            </li>
+                            <li class="account__box-item">
+                                <button class="account__log-regs account__box-btn">Đăng nhập</button>
+                            </li>
+                            <li class="account__box-item">
+                                <a href="" class="facebook account__box-logWith account__box-btn">
+                                    <i class="account__box-icon fa-brands fa-facebook-f"></i>
+                                    <p class="account__box-item-title">Đăng nhập với Facebook</p>
+                                </a>
+                            </li>
+                            <li class="account__box-item">
+                                <a href="" class="google account__box-logWith account__box-btn">
+                                    <i class="account__box-icon fa-brands fa-google"></i>
+                                    <p class="account__box-item-title">Đăng nhập với Google</p>
+                                </a>
+                            </li>
+                        </ul>
+// regs

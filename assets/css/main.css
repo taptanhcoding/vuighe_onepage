@@ -1,0 +1,242 @@
+.content {
+    padding-top: calc(var(--header-height) + 18px);
+    background-color: var(--background-color);
+    background-clip: border-box;
+    margin-bottom: 30px;
+}
+/* Css Slider  */
+.content__slider {
+
+}
+/* Css col-1  */
+.content__slider-col_1 {
+
+}
+
+.content__slider-col_1 .row {
+    display: flex;
+    flex-wrap: nowrap!important;
+    justify-content: space-between;
+}
+
+.content__slider-col_1 .content__slider-item-main {
+    position: relative;
+}
+
+
+
+
+.content__slider-item-desc {
+    --font-size : 1.4rem;
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    right: 6px;
+    color: var(--white-color);
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 25px;
+    padding-bottom: 25px;
+}
+
+.content__slider-item-icon {
+    font-size: calc(var(--font-size)*4);
+    margin-right: 25px;
+    pointer-events: none;
+    color: #000;
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0.7;
+}
+
+.anime__info-view {
+    font-size: var(--font-size);
+
+}
+
+.anime__info-name {
+    font-size: var(--font-size);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+
+}
+
+.content__slider-item {
+    display: flex!important;
+    /* align-items: end!important; */
+    /* border: 0.4px solid #ccc; */
+    /* box-sizing: content-box; */
+}
+/* Css col-2  */
+.content__slider-col_2 .content__slider-item {
+    margin-bottom: 6px;
+    position: relative;
+}
+/* Css col-1-1 */
+.content__slider-col_1-1 {
+    margin-top: 12px;
+}
+/* Css slide base  */
+.content__slider-item-img {
+    width: 100%;
+}
+
+.content__slider-item:hover {
+    filter: brightness(1.1);
+}
+
+
+/* Css Content  */
+.content__episode {
+
+}
+
+.content__heading {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.content__heading-link {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-right: 20px;
+    display: flex;
+    align-self: center;
+}
+
+.content__heading-link-icon {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.content__episode-list {
+    padding-left: 0;
+}
+
+.content__episode-item {
+    position: relative;
+    --font-size : 1.2rem;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.content__episode-link {
+    overflow: hidden;
+    display: flex;
+}
+
+.content__episode-img {
+    width: 100%;
+    transition: transform ease .3s;
+}
+
+.content__episode-img:hover {
+    transform: scale(1.1);
+}
+
+.content__episode-link:hover .content__slider-item-icon {
+    display: block;
+}
+
+.content__episode-link .content__slider-item-desc {
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.content__episode-link .content__slider-item-icon {
+    font-size: calc(var(--font-size)*5);
+    position: absolute;    
+    top: 20px;
+    left: 20px;
+    color: var(--text-color);
+    text-shadow: 0 0 7px var(--white-color);
+    opacity: 0.7;
+    display: none;
+    animation: showSlow ease 1s;
+
+}
+
+.content__episode-link .anime__info-eps {
+    font-size: var(--font-size);
+    
+}
+
+.anime__info {
+    width: 90%;
+}
+
+.anime__info-eps,.content__slider-item-name {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    width: 90%;
+}
+/*anime news*/
+.content__news-item {
+    margin-bottom: 10px;
+}
+
+.content__news-item:hover .content__news-img {
+    filter: brightness(1.1);
+}
+
+.content__news-link {
+    height: 80px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+}
+
+.content__news-img {
+    width: 100%;
+}
+
+.content__news-title {
+    font-weight: 500;
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box!important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+/* Cartoon */
+
+.content__cartoon-item {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 50px;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 50px;
+}
+
+.content__cartoon-view {
+    font-size: 1.1rem!important;
+}
+
+/* footer*/
+.footer {
+    display: flex;
+    justify-content: center;
+}
+.footer__btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    line-height: 2.6rem;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    background-color: var(--outline);
+}

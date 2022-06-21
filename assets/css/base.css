@@ -1,0 +1,719 @@
+:root {
+    --white-color : #fff;
+    --header-height : 60px;
+    --gray-color : #ccc;
+}
+
+.light {
+    --text-change: #333;
+    --background-color : #fff;
+    --text-color: #333;
+    --outline : #d80f16;
+    --change-color: #333;
+    --btn-log-color: #ccc;
+    --border-color: #ccc;
+}
+
+.dark {
+    --text-change: #fff;
+    --border-color: #444;
+    --background-color : rgba(50, 50, 50, 1);
+    --text-color: #1ab394;
+    --change-color: #ccc;
+    --outline: #1ab394;
+    --btn-log-color: #1ab394;
+
+}
+#main {
+    background-color: var(--background-color);
+    min-width: 320px;
+}
+
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}   
+
+/* Css header  */
+.header {
+    border-bottom: 1px solid var(--border-color);
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: var(--background-color);
+}
+.header__main {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    flex-wrap: nowrap!important;
+}
+/* Css logo  */
+.box-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.header__bar--mobile-icon {
+    font-size: 2rem;
+    display: none;
+}
+
+.header__logo {
+    width: 180px;
+    display: block;
+}
+
+.header__logo-img {
+    width: 100%;
+}
+
+/* Css bar */
+.header__bar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.header__bar-items {
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.header__bar-link {
+    text-decoration: none;
+    color : var(--text-color);
+    display: block;
+    font-size: 1.4rem;
+    line-height: 2;
+    font-weight: 400;
+    padding: 0 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--background-color);
+}
+
+/* Css search  */
+.header__search {
+    --padding-search: 7px;
+    width: 320px;
+    display: flex;
+    position: relative;
+    padding: var(--padding-search);
+}
+
+.header__search-box {
+    --search-width : 90%;
+    padding: 5px calc((100% - var(--search-width))/2);
+    z-index: 3;
+    flex: 1;
+    position: relative;
+}
+
+.header__search-input {
+    background-color: var(--background-color);
+    font-size: 1.4rem;
+    line-height: 2;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0 35px 0 12px ;
+    width: var(--search-width);
+    min-width: 260px;
+    flex: 1;
+}
+
+.header__search-input:focus {
+    border: 1px solid var(--outline);
+    z-index: 30;
+}
+
+.dark .header__search-input:focus {
+    
+}
+
+.header__search-input:focus ~  .header__search-history {
+    display: flex;
+    z-index: 29;
+}
+
+.dark .header__search-input:focus ~  .header__search-history {
+
+    opacity: 0.93;
+}
+
+.header__search-input:focus ~  .header__search-icon {
+    z-index: 31;
+}
+
+.header__search-icon {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color : var(--gray-color);
+    position: absolute;
+    right: calc(var(--padding-search) + 10px);
+    top : calc(var(--padding-search) + 7px);
+}
+
+
+.header__search-history {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 129px;
+    width: 320px;
+    background-color: var(--background-color);
+    box-shadow: 0 0 5px #000;
+    padding-top: 50px;
+    font-size: 1.4rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__search-history-desc {
+    font-size: 1.3rem;
+}
+/* Css more  */
+.header__more {
+    list-style : none;
+    display: flex;
+}
+
+.header__more-items {
+    margin-left: 8px;
+}
+
+.header__bar-items:hover .anime__list {
+    display: block;
+    z-index: 10;
+    background-color: var();
+}
+
+.header__bar-items.more:hover .header__bar-link {
+    height: calc(var(--header-height)*0.78) ;
+    align-self: flex-end;
+    margin-bottom: -12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.header__more-link {
+    --size: 35px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+    text-decoration: none;
+    border : 1px solid var(--gray-color);
+    border-radius: 50%;
+    padding: 8px;
+    background-color: var(--background-color);
+}
+
+.header__more-themes {
+    color: var(--change-color);
+}
+
+.header__more-link--icon {
+    font-size: 1.4rem;
+}
+
+.header__more-account {
+    background-color: var(--border-color);
+    color: var(--white-color);
+}
+
+.header__more-themes:hover {
+    background-color: blue;
+    color: var(--white-color);
+}
+
+/* Css category */
+.anime__list {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    box-shadow: 0 1px 5px var(--gray-color);
+    background-color: var(--background-color);
+}
+
+.anime__list-category {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: nowrap!important;
+    padding: 0 12px;
+
+}
+
+.anime__list-category--items {
+    flex-shrink: 0;
+}
+
+.anime__list-category--link {
+    --font-size : 1.3rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    margin-right: 3px;
+    padding: 2px 10px;
+}
+
+.anime__list-film {
+    list-style: none;
+    padding: 0 12px 5px;
+    margin-top: 10px;
+    overflow-x: auto;
+    flex-wrap: nowrap!important;
+}
+
+.anime__list-film::-webkit-scrollbar {
+    height: 7px;
+}
+
+.anime__list-film::-webkit-scrollbar-track {
+    box-shadow: none; 
+    border-radius: 10px;
+}
+   
+
+.anime__list-film::-webkit-scrollbar-thumb {
+    background: rgb(199, 45, 6); 
+}
+
+
+.anime__list-film--item {
+    margin-right: 12px;
+    width : 12.5%;
+
+}
+
+.anime__list-film--link {
+    color: var(--white-color);
+    display: block;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+}
+
+.anime__list-film--link:hover .anime__list-film--item__img {
+    transform: scale(1.2);
+}
+
+.anime__list-film--item__img {
+    width: 100%;
+    transition: transform linear .3s;
+}
+
+.anime__list-film--link:hover .anime__list-film--item__title {
+    color: #d80f16;
+    text-shadow: 0 0 2px var(--white-color);
+}
+
+.anime__list-film--item__title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-shadow: 0 0 2px var(--text-color);
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    padding: 0 5px;
+    display: block;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+/* Css nav */
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    z-index: 30;
+    display: none;
+    transform: translateX(100%);
+    transition: all ease 0.6s;
+}
+
+
+
+.modal__outline {
+}
+
+.modal__account {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    /* display: none; */
+    transition: all ease 0.5s;
+}
+
+.modal.dark .modal__account{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+/* 1 */
+.modal__account-header {
+    --account-header-height: 120px;
+    height: var(--account-header-height);
+    padding: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+/* 1-1 */
+.modal__account-user {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.modal__account-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal__account-hello {
+    font-weight: 500;
+}
+
+.modal__account-avatar {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    background-color: #333;
+    border-radius: 100%;
+    opacity: 0.8;
+}
+
+.header__more-link--icon-acc {
+    font-size: 5rem;
+    display: block;
+    margin: auto;
+    color: #fff;
+}
+/* 1-2 */
+.modal__account-title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.modal__account-act {
+    display: block;
+    line-height: 2.5rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+.line {
+    position: absolute;
+    bottom: 0;
+    background-color: #d80f16;
+    height: 3px;
+    transition: all linear 0.1s;
+}
+
+
+/* 2 */
+
+.modal__account-content {
+    padding: 20px 10px;
+    font-size: 1.2rem;
+
+}
+
+.account__box-list {
+    display: none;
+}
+
+.account__box-list.active {
+    display: block;
+}
+
+.account__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.account__box-item {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    --size : 30px;
+    margin-bottom: 10px;
+}
+
+.tip {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #d80f16;
+    font-size: 1rem;
+}
+
+.account__box-item-input {
+    flex-direction: column;
+}
+
+.account__box-icon {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 1.3rem;
+    line-height: var(--size);
+    color: #fff;
+    display: block;
+    width: var(--size);
+    text-align: center;
+}
+
+.account__box-input {
+    padding: 1px 15px 1px var(--size);
+    font-size: 1.3rem;
+    height: var(--size);
+    outline: none;
+    border : 1px solid var(--gray-color);
+    border-radius: 3px;
+    -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dark .account__box-input {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.account__box-item-input .account__box-title {
+    color: var(--text-change);
+}
+
+.account__box-input:focus {
+    border : 1px solid var(--outline);
+}
+
+.account__box-input:focus ~ .tip{
+    display: block;
+}
+
+.account__box-input:focus ~ .account__box-icon {
+    color: #d80f16;
+}
+
+.account__box-item-check {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    position: relative;
+}
+
+.account__box-title {
+    font-size: 1rem;
+    color: #888888;
+}
+
+.account__box-icon-check:checked ~ .checked{
+    border: 1px solid #d80f16;
+    padding: 2px;
+    background-color: #d80f16;
+    background-clip: content-box;
+}
+
+.account__box-icon-check:checked ~ .account__box-title{
+    color: #d80f16;
+}
+
+.checked {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    content: "";
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    width: 12px;
+}
+
+.account__box-btn {
+    flex: 1;
+    border: 1px solid;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: var(--size);
+    display: flex;
+    justify-content: center;
+}
+
+.account__box-logWith {
+    color: #fff;
+}
+
+.facebook {
+    background: #3b5998;
+    border-color: #3b5998;
+}
+
+.google {
+    background: #c23321;
+    border-color: #c23321;
+}
+
+.account__log-regs {
+    color: var(--text-change);
+    background: var(--btn-log-color);
+    border-color: var(--btn-log-color);
+}
+
+.account__log-regs:hover {
+    filter: brightness(0.8);
+}
+
+.account__box-item-regs {
+    justify-content: flex-start;
+}
+
+.account__box-item-regs .account__box-item-check {
+    margin-right: 10px;
+}
+
+.account__box-item-time {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.account__box-title {
+    color: var(--text-color)
+}
+
+.account__box-item-time .account__box-input {
+    padding: 0;
+}
+/* Mobile bar  */
+.bar__mobile {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: var(--background-color);
+    z-index: 20;
+    padding: 60px 10px 10px 10px;
+    display: none;
+    transition: all ease 0.5s;
+    transform: translateX(-100%);
+}
+
+
+.bar__mobile-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: var(--change-color);
+}
+
+.bar__mobile-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.bar__mobile-logo__link {
+    width: 150px;
+    display: block;
+}
+
+.bar__mobile-search {
+    position: relative;
+    margin: 15px 0;
+    display: flex;
+    --height: 1.4rem;
+    --width: 30px;
+}
+
+.bar__mobile-search-input {
+    flex: 1;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    padding: 5px var(--width) 5px 10px;
+}
+
+.bar__mobile-search-icon {
+    line-height: var(--height);
+    font-size: var(--height);
+    position: absolute;
+    top: var(--height);
+    right: var(--width);
+    transform: translate(120%, -50%);
+    color: #ccc;
+}
+
+
+.bar__mobile-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.bar__mobile-item {
+    flex: 1;
+
+}
+
+.bar__mobile-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--change-color);
+    font-size: 1.3rem;
+    line-height: 40px;
+    
+}
+
+.bar__mobile-icon {
+    margin-right: 20px;
+}
+
+.bar__mobile-title {
+
+}
