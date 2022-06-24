@@ -1,14 +1,22 @@
-const boxLogo =  document.querySelector('.header__logo-img');
-const headerElement = document.querySelector('.header');
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+const boxLogo =  $('.header__logo-img');
+const headerElement = $('.header');
 const changeThemeBtn = headerElement.querySelector('.header__more-themes');
-const main = document.querySelector('#main');
-const modalAccount = document.querySelector('.modal');
-const mobileNav =  document.querySelector('.bar__mobile');
+const main = $('#main');
+const modalAccount = $('.modal');
+const mobileNav =  $('.bar__mobile');
 const accountBtn = document.getElementById('account');
-const modalAccountBox = document.querySelector('.modal__account');
-const modalClose = document.querySelector('.modal__account-close');
-const mobileNavBtn = document.querySelector('.header__bar--mobile-icon');
-const mobileNavBtnClose = document.querySelector('.bar__mobile-close')
+const modalAccountBox = $('.modal__account');
+const modalClose = $('.modal__account-close');
+const mobileNavBtn = $('.header__bar--mobile-icon');
+const mobileNavBtnClose = $('.bar__mobile-close')
+const historySearch = $('.header__search-history');
+const animeInfo = $('.anime__info-view');
+const animeName = $('.anime__info-name');
+const sliderChanges = $$("a.content__slider-item:not(.content__slider-item-main)");
+const mainSlider = $('.content__slider-item-main .content__slider-item-img');
 
 // hàm toggle class
 Object.prototype.toggleMultiClass = function(class1, class2) {
@@ -26,7 +34,6 @@ function toggleAccountBox () {
     
     Array.from(accTitles).forEach(function(accTitle, index) {
         if(accTitle.classList.contains('active')) {
-            console.log(accTitle, accTitle.offsetWidth)
             line.style.width = accTitle.offsetWidth + 'px';
             line.style.left = accTitle.offsetLeft + 'px';
         }
@@ -119,17 +126,7 @@ app = {
             filmId: 1,
             type: 1,
             view: 12345653
-        },
-        {
-            id: 8,
-            name: 'Spy x Family',
-            path: '',
-            imageFilm: './assets/img/slider/slider-8.jpg',
-            image: './assets/img/slider/anime-3.jpg',
-            filmId: 1,
-            type: 1,
-            view: 12345653
-        },
+        }
     ],
     New: [
         {
@@ -218,6 +215,74 @@ app = {
             element.style.display = 'none';
         },500)
     },
+    handleHistory: function() {
+        historySearch.onmousedown = function(e) {
+            e.preventDefault();
+            e.stopPropagation()
+        }
+    },
+    changeAnimeText: function(view,name) {
+        animeInfo.innerHTML = `${view}`;
+        animeName.innerHTML = `${name}`;
+    },
+    setText: function(x) {
+        const _this = this;
+        switch(x) {
+            case 1 :
+                _this.changeAnimeText('23,577 lượt xem','Tomodaki Game')
+                break;
+            case 2 :
+                _this.changeAnimeText('49,577 lượt xem','Dấu ấn rồng thiêng')
+                break;
+            case 3 :
+                _this.changeAnimeText('93,577 lượt xem','Pháp sư trừ tà')
+                break;
+            case 4 :
+                _this.changeAnimeText('3,577 lượt xem','Chuyện tình công sở')
+                break;    
+            case 5 :
+                _this.changeAnimeText('7,577 lượt xem','Pháp sư mạnh nhất')
+                break;
+            case 6 :
+                _this.changeAnimeText('12,577 lượt xem','Lời nói dối tháng tư')
+                break;
+            default :
+                _this.changeAnimeText('46,577 lượt xem','Love war')
+        }
+    },
+    changeAnime: function(x) {
+        var valueNumber = Number.parseInt(x.getAttribute('number'));
+        mainSlider.setAttribute('src',`./assets/img/slider/slider-${valueNumber}.jpg`);
+        mainSlider.setAttribute('number',valueNumber);
+        this.setText(valueNumber)
+    },
+    sliderAuto: function() {
+        const _this = this;
+        setInterval(function() {
+            var numberSlider = Number.parseInt(document.querySelector('.content__slider-item-main .content__slider-item-img').getAttribute('number'));
+            if(numberSlider < 7) {
+                numberSlider++;
+            } else {
+                numberSlider = 1;
+            }
+            document.querySelector('.content__slider-item-main .content__slider-item-img').setAttribute('number',numberSlider);
+            document.querySelector('.content__slider-item-main .content__slider-item-img').setAttribute('src',`./assets/img/slider/slider-${numberSlider}.jpg`);
+            _this.setText(numberSlider);
+            
+        },3000);
+    },
+    sliderAction: function() {
+        const _this = this;
+        for(var sliderChange of sliderChanges) {
+            sliderChange.onmouseover = function() {
+            _this.changeAnime(this);
+        
+            }
+        }
+    },
+    handleSlider : function() {
+
+    },
     handleContent: function() {
         const _this = this;
 
@@ -273,6 +338,13 @@ app = {
 
         // xử lý trong web
         this.handleContent();
+
+        // xử lý tab history
+        this.handleHistory();
+
+        // xử lý slider
+        this.sliderAuto();
+        this.sliderAction();
     }
 };
 
